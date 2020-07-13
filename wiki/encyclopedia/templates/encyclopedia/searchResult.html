@@ -4,11 +4,14 @@
     {{title}}
 {% endblock %}
 
+
 {% block body %}
     <h1>Result for {{ title }}</h1>
     {% if entry == None %}
-<p>We do not have any information about <q>{{title}}</q></p>
+    <p>We do not have any information about <q>{{title}}</q></p>
     {% else %}
         <p>{{ entry }}</p>
     {% endif %}
 {% endblock %}
+
+
