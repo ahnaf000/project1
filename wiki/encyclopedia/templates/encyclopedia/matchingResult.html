@@ -1,0 +1,31 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{querry}}
+{% endblock %}
+
+{% block body %}
+    {% if check is None %}
+        <h3>We have no matching Entries in the Encyclopedia for <strong>{{querry}}</strong></h3>
+        <p><a href = "{% url 'encyclopedia:index' %}">Go Back To Home</a></p>
+    {% else %}
+        <h3>Did You Mean:</h3>
+        <ul>
+            {% for item in matchingResults %}
+
+                <li>
+                    <!--
+                    <a href="wiki/{{item}}">
+                        {{ item }}
+                    </a>
+                    -->
+                    <a href="/wiki/{{item}}">
+                        {{ item }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit {{title}}
+{% endblock %}
+
+
+{% block body %}
+
+    <form method="post" action ="/wiki/editPage/{{title}}/">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+<p>Read through <a href = "https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">GitHub’s Markdown guide</a> to get an understanding for how Markdown’s syntax works. Pay attention in particular to what Markdown syntax looks like for headings, bold text, links, and lists.</p>
+
+{% endblock %}
+
+

@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block body %}
+    <h1>Sorry</h1>
+    <h3>We already have an entry for <strong>{{ title }}</strong></h3>
+    <p>Visit the page at <a href = "{{ link }}">{{ title }}</a></p>
+
+
+{% endblock %}
